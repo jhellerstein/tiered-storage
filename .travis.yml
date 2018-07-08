@@ -4,7 +4,7 @@ dist: trusty
 osx_image: xcode8.3
 compiler:
 - clang
-- gcc
+# - gcc
 os:
 - linux
 # - osx
