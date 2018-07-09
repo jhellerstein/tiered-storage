@@ -11,6 +11,8 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 # need to build a target at this level or subdirs won't have the 
 # protobuf files generated.
 ADD_LIBRARY(flproto ${PROTO_HEADER} ${PROTO_SRC})
+TARGET_LINK_LIBRARIES(flproto ${Protobuf_LIBRARIES})
+
 
 # The source dependencies of the key value store clients and servers.
 SET(KV_SRC_DEPENDENCIES
