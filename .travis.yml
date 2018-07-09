@@ -20,7 +20,7 @@ env:
 before_script:
 - export PATH="/usr/bin:$PATH"
 - ${TRAVIS_BUILD_DIR}/scripts/print_diagnostics.sh
-- sudo apt-get install protobuf-compiler libprotobuf-dev
+# - sudo apt-get install protobuf-compiler libprotobuf-dev
 script:
 - ${TRAVIS_BUILD_DIR}/scripts/travis.sh
 # matrix:
