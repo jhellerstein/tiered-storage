@@ -2,6 +2,7 @@
 #define __SERVER_UTILITY_H__
 
 #include <string>
+#include <iostream>
 #include "communication.pb.h"
 #include "../zmq/socket_cache.hpp"
 #include "../zmq/zmq_util.hpp"
