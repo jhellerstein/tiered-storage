@@ -7,7 +7,7 @@ main() {
     rm -rf build/"$TEST_TYPE";
 
     # Build the code.
-    ./scripts/build.sh "$TEST_TYPE" 1;
+    ./scripts/build.sh "$TEST_TYPE" -j4;
 
     # # Run all the unit tests.
     # (cd build/"$TEST_TYPE" && ctest -L UNITTEST);
