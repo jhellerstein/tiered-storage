@@ -21,7 +21,7 @@ install_protobuf() {
     tar -xzvf v3.6.0.tar.gz
     cd protobuf-3.6.0
     ./autogen.sh
-    ./configure && make && make check
+    ./configure && make
     sudo make install
     sudo ldconfig
   else
