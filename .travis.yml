@@ -11,16 +11,17 @@ os:
 env:
 # - TEST_TYPE=Debug
 - TEST_TYPE=Release
-install:
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    ./scripts/install_dependencies_osx.sh;
-  else
-    ./scripts/install_dependencies.sh;
-  fi
+# install:
+# - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+#     ./scripts/install_dependencies_osx.sh;
+#   else
+#     ./scripts/install_dependencies.sh;
+#   fi
 before_script:
 - export PATH="/usr/bin:$PATH"
+- export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 - ${TRAVIS_BUILD_DIR}/scripts/print_diagnostics.sh
-# - sudo apt-get install protobuf-compiler libprotobuf-dev
+- sudo apt-get install protobuf-compiler libprotobuf-dev
 script:
 - ${TRAVIS_BUILD_DIR}/scripts/travis.sh
 # matrix:
