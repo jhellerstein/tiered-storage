@@ -20,7 +20,7 @@ install_protobuf() {
     wget https://github.com/google/protobuf/archive/v3.6.0.tar.gz
     tar -xzvf v3.6.0.tar.gz
     cd protobuf-3.6.0; ./autogen.sh && ./configure && make
-    sudo -i -c 'cd protobuf-3.6.0 && make install'
+    sudo -i bash -c 'cd protobuf-3.6.0 && make install'
     sudo -i ldconfig
   else
     echo "Using cached directory."
