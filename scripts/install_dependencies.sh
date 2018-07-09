@@ -30,6 +30,7 @@ main() {
     set -x
     sudo apt-get -y update
     install_misc
+    install_protobuf
     set +x
 }
 

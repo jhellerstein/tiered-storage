@@ -9,7 +9,7 @@ os:
 - linux
 # - osx
 env:
-- TEST_TYPE=Debug
+# - TEST_TYPE=Debug
 - TEST_TYPE=Release
 install:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
