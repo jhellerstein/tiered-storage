@@ -19,9 +19,9 @@ env:
 #   fi
 before_script:
 - export PATH="/usr/bin:$PATH"
-- ./scripts/print_diagnostics.sh
+- ${TRAVIS_BUILD_DIR}/scripts/print_diagnostics.sh
 script:
-- ./scripts/travis.sh
+- ${TRAVIS_BUILD_DIR}/scripts/travis.sh
 # matrix:
 #   allow_failures:
 #     - os: osx
