@@ -2,6 +2,7 @@
 #include <string>
 #include <functional>
 #include <unistd.h>
+#include <iostream>
 #include "communication.pb.h"
 #include "zmq/socket_cache.hpp"
 #include "zmq/zmq_util.hpp"
