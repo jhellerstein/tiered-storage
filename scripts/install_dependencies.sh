@@ -14,23 +14,10 @@ install_misc() {
       unzip
 }
 
-install_protobuf() {
-    git clone https://github.com/google/protobuf.git
-    cd protobuf/
-    ./autogen.sh
-    ./configure
-    make
-    make check
-    sudo make install
-    sudo ldconfig # refresh shared library cache.
-    protoc -h
-}
-
 main() {
     set -x
     sudo apt-get -y update
     install_misc
-    install_protobuf
     set +x
 }
 
