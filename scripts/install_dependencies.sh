@@ -21,7 +21,9 @@ install_protobuf() {
     tar -xzvf v3.6.0.tar.gz
     cd protobuf-3.6.0
     ./autogen.sh
-    ./configure --prefix=$HOME/protobuf && make && make install
+    ./configure && make && make check
+    sudo make install
+    sudo ldconfig
   else
     echo "Using cached directory."
   fi
