@@ -5,6 +5,7 @@
 #include <sstream>
 #include <vector>
 #include <unordered_map>
+#include <unordered_set>
 #include "communication.pb.h"
 #include "zmq/socket_cache.hpp"
 #include "zmq/zmq_util.hpp"
