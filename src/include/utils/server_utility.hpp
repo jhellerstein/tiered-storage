@@ -76,7 +76,7 @@ public:
     if (!input) {
       err_number = 1;
     } else if (!pl.ParseFromIstream(&input)) {
-      cerr << "Failed to parse payload." << endl;
+      std::cerr << "Failed to parse payload." << endl;
       err_number = 1;
     } else {
       res = ReadCommittedPairLattice<string>(TimestampValuePair<string>(pl.timestamp(), pl.value()));
@@ -102,10 +102,10 @@ public:
       // ios::trunc means that we overwrite the existing file
       fstream output(fname, ios::out | ios::trunc | ios::binary);
       if (!pl.SerializeToOstream(&output)) {
-        cerr << "Failed to write payload." << endl;
+        std::cerr << "Failed to write payload." << endl;
       }
     } else if (!pl_orig.ParseFromIstream(&input)) { // if we have seen the key before, attempt to parse what was there before
-      cerr << "Failed to parse payload." << endl;
+      std::cerr << "Failed to parse payload." << endl;
     } else {
       // get the existing value that we have and merge
       ReadCommittedPairLattice<string> l = ReadCommittedPairLattice<string>(TimestampValuePair<string>(pl_orig.timestamp(), pl_orig.value()));
@@ -120,7 +120,7 @@ public:
         fstream output(fname, ios::out | ios::trunc | ios::binary);
 
         if (!pl.SerializeToOstream(&output)) {
-          cerr << "Failed to write payload\n";
+          std::cerr << "Failed to write payload\n";
         }
       }
     }

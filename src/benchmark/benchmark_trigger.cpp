@@ -19,7 +19,7 @@ unsigned DEFAULT_LOCAL_REPLICATION;
 
 int main(int argc, char* argv[]) {
   if (argc != 2) {
-    cerr << "Usage: " << argv[0] << " <benchmark_threads>" << endl;
+    std::cerr << "Usage: " << argv[0] << " <benchmark_threads>" << endl;
     return 1;
   }
 

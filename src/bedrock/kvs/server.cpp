@@ -327,7 +327,7 @@ void run(unsigned thread_id) {
     // gossip updates to other threads
     gossip_end = chrono::system_clock::now();
     if (chrono::duration_cast<chrono::microseconds>(gossip_end-gossip_start).count() >= PERIOD) {
-      //cerr << "thread " + to_string(thread_id) + " entering event gossip\n";
+      //std::cerr << "thread " + to_string(thread_id) + " entering event gossip\n";
       auto work_start = chrono::system_clock::now();
       // only gossip if we have changes
       if (local_changeset.size() > 0) {
@@ -518,7 +518,7 @@ void run(unsigned thread_id) {
 int main(int argc, char* argv[]) {
 
   if (argc != 1) {
-    cerr << "Usage: " << argv[0] << endl;
+    std::cerr << "Usage: " << argv[0] << endl;
     return 1;
   }
 

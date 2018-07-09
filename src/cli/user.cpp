@@ -239,8 +239,8 @@ void run(unsigned thread_id, string filename) {
 
 int main(int argc, char* argv[]) {
   if (argc > 2) {
-    cerr << "Usage: " << argv[0] << "<filename>" << endl;
-    cerr << "Filename is optional. Omit the filename to run in interactive mode." << endl;
+    std::cerr << "Usage: " << argv[0] << "<filename>" << endl;
+    std::cerr << "Filename is optional. Omit the filename to run in interactive mode." << endl;
     return 1;
   }
 

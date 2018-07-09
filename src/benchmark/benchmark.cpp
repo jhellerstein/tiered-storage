@@ -470,7 +470,7 @@ void run(unsigned thread_id) {
 
 int main(int argc, char* argv[]) {
   if (argc != 1) {
-    cerr << "Usage: " << argv[0] << endl;
+    std::cerr << "Usage: " << argv[0] << endl;
     return 1;
   }
 

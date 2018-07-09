@@ -176,11 +176,11 @@ vector<string> get_address_from_routing(
 
   while (err_number != 0) {
     if (err_number == 1) {
-      cerr << "No servers have joined the cluster yet. Retrying request." << endl;
+      std::cerr << "No servers have joined the cluster yet. Retrying request." << endl;
     }
 
     if (count > 0 && count % 5 == 0) {
-      cerr << "Pausing for 5 seconds before continuing to query routing layer..." << endl;
+      std::cerr << "Pausing for 5 seconds before continuing to query routing layer..." << endl;
       usleep(5000000);
     }
 
