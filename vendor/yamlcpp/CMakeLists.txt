@@ -8,7 +8,7 @@ ExternalProject_Add(yamlcpp
     BUILD_IN_SOURCE 1
     INSTALL_DIR "${CMAKE_BINARY_DIR}/"
     CMAKE_ARGS -DBUILD_SHARED_LIBS=ON -DCMAKE_CXX_COMPILER='clang++' -DCMAKE_CXX_FLAGS='-stdlib=libc++'
-    BUILD_COMMAND make
+    # BUILD_COMMAND make
     INSTALL_COMMAND ""
 )
 

@@ -17,8 +17,8 @@ install_misc() {
 install_protobuf() {
   # check to see if protobuf folder is empty
   if [ ! -d "$HOME/protobuf/lib" ]; then
-    wget https://github.com/google/protobuf/archive/v3.6.0.tar.gz
-    tar -xzvf v3.6.0.tar.gz
+    wget https://github.com/google/protobuf/releases/download/v3.6.0/protobuf-cpp-3.6.0.tar.gz
+    tar -xzf protobuf-cpp-3.6.0.tar.gz
     the_dir=$(pwd)
     bash -c "cd protobuf-3.6.0 && ./autogen.sh && ./configure && make"
     sudo -i bash -c "cd ${the_dir}/protobuf-3.6.0 && make install"

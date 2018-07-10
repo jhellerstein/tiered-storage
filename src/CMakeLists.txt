@@ -2,16 +2,19 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.6)
 
 INCLUDE_DIRECTORIES(include)
 
+SET(Protobuf_USE_STATIC_LIBS ON)
 INCLUDE(FindProtobuf)
 FIND_PACKAGE(Protobuf REQUIRED)
 INCLUDE_DIRECTORIES(${PROTOBUF_INCLUDE_DIR})
 PROTOBUF_GENERATE_CPP(PROTO_SRC PROTO_HEADER ./include/communication.proto)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
+MESSAGE(STATUS "Protobuf_LIBRARY is " ${Protobuf_LIBRARY})
+MESSAGE(STATUS "Protobuf_USE_STATIC_LIBS is " ${Protobuf_USE_STATIC_LIBS})
 
 # need to build a target at this level or subdirs won't have the 
 # protobuf files generated.
-ADD_LIBRARY(flproto ${PROTO_HEADER} ${PROTO_SRC})
-# TARGET_LINK_LIBRARIES(flproto ${Protobuf_LIBRARIES})
+ADD_LIBRARY(flproto STATIC ${PROTO_HEADER} ${PROTO_SRC})
+TARGET_LINK_LIBRARIES(flproto ${Protobuf_LIBRARIES})
 
 
 # The source dependencies of the key value store clients and servers.
@@ -22,7 +25,7 @@ SET(KV_SRC_DEPENDENCIES
 
 # The library dependencies of the key value store clients and servers.
 SET(KV_LIBRARY_DEPENDENCIES
-    protobuf
+	protobuf
     flproto
     pthread
     zmq
